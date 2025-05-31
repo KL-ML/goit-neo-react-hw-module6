@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import Container from '../Container/Container';
 import Heading from '../Heading/Heading';
 import css from './SearchBox.module.css';
@@ -11,7 +9,6 @@ export default function SearchBox() {
   const dispatch = useDispatch();
 
   const handleChange = ({ target: { value } }) => {
-    
     dispatch(changeFilter(value.trim()));
   };
 
@@ -31,8 +28,3 @@ export default function SearchBox() {
     </>
   );
 }
-
-SearchBox.PropTypes = {
-  inputValue: PropTypes.string,
-  onInput: PropTypes.func,
-};
