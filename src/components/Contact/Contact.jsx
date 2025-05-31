@@ -5,8 +5,16 @@ import { IoPhonePortraitOutline } from 'react-icons/io5';
 import ButtonIcon from '../ButtonIcon/ButtonIcon';
 import { RxCross1 } from 'react-icons/rx';
 import { BsArrowClockwise } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/contactsSlice';
+import { toast } from 'react-toastify';
 
-export default function Contact({ id, name, number, avatar, onDelete }) {
+export default function Contact({ id, name, number, avatar }) {
+  const dispatch = useDispatch();
+  const handleDelete = id => {
+    toast('Contact deleteded');
+    dispatch(deleteContact(id));
+  };
   return (
     <>
       <li className={css.contactWrap}>
@@ -37,7 +45,7 @@ export default function Contact({ id, name, number, avatar, onDelete }) {
             icon={RxCross1}
             iconVariant="deleteIcon"
             iconSize={20}
-            onDelete={onDelete}
+            onDelete={handleDelete}
             red
             id={id}
           />
