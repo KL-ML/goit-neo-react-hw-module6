@@ -3,10 +3,16 @@ import PropTypes from 'prop-types';
 import Container from '../Container/Container';
 import Heading from '../Heading/Heading';
 import css from './SearchBox.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeFilter } from '../../redux/filtersSlice';
 
-export default function SearchBox({ onInput, inputValue }) {
+export default function SearchBox() {
+  const filter = useSelector(state => state.filters.name);
+  const dispatch = useDispatch();
+
   const handleChange = ({ target: { value } }) => {
-    onInput(value.trim());
+    
+    dispatch(changeFilter(value.trim()));
   };
 
   return (
@@ -18,7 +24,7 @@ export default function SearchBox({ onInput, inputValue }) {
         <input
           className={css.searchInput}
           type="text"
-          value={inputValue}
+          value={filter}
           onChange={handleChange}
         />
       </Container>
