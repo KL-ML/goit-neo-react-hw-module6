@@ -10,6 +10,11 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import 'yup-phone-lite';
 import Heading from '../Heading/Heading';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
+import { nanoid } from 'nanoid';
+
+
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required(),
@@ -23,12 +28,14 @@ const defaultFormValues = {
   number: '',
 };
 
-const ContactForm = ({ addContact }) => {
+const ContactForm = () => {
+  const dispatch = useDispatch();
+
   const nameFieldId = useId();
   const numberFieldId = useId();
 
-  const handleSubmit = (values, actions) => {
-    addContact(values);
+  const handleSubmit = ({ name, number }, actions) => {
+    dispatch(addContact({ id: nanoid(), name, number }));
     actions.resetForm();
   };
   return (
