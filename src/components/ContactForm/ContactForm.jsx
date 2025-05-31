@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import Button from '../Button/Button';
 import { GoPlus } from 'react-icons/go';
 import css from './ContactForm.module.css';
@@ -13,8 +11,6 @@ import Heading from '../Heading/Heading';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contactsSlice';
 import { nanoid } from 'nanoid';
-
-
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required(),
@@ -99,7 +95,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-ContactForm.PropTypes = {
-  addContact: PropTypes.func,
-};
