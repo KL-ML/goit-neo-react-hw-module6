@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import Contact from '../Contact/Contact';
 import Container from '../Container/Container';
 import Heading from '../Heading/Heading';
@@ -49,8 +47,3 @@ export default function ContactList() {
     </>
   );
 }
-
-ContactList.PropTypes = {
-  contacts: PropTypes.object,
-  onDelete: PropTypes.func,
-};
