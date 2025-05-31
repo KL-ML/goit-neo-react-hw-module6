@@ -1,0 +1,52 @@
+.heading {
+  /* padding: 0; */
+}
+.header1 {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.header2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+.header2 span {
+  color: var(--light-secondary-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+}
+.cardTitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+@media (min-width: 768px) {
+  .cardTitle {
+    margin-bottom: 36px;
+  }
+}
+.cardTitle span {
+  color: var(--light-secondary-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+}
+.paragraf {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  margin-bottom: 6px;
+}
+.paragraf span {
+  color: var(--light-secondary-color);
+}
+.smallParagraf {
+  font-size: 12px;
+}
+.smallParagraf span {
+  color: var(--light-secondary-color);
+}

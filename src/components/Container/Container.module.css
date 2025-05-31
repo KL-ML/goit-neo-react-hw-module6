@@ -1,0 +1,19 @@
+.outerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .outerContainer {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--dark-tertiary-color);
+  }
+}
+.innerContainer {
+  border-radius: 12px;
+  width: 100%;
+  background-color: var(--dark-secondary-color);
+  padding: 16px;
+}

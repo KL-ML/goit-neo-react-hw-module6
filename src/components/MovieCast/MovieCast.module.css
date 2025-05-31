@@ -1,0 +1,27 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.castItem {
+  width: 108px;
+  font-size: 10px;
+}
+.imgWrap {
+  height: 160px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: var(--dark-primary-color);
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.castInfo {
+  font-size: 10px;
+}

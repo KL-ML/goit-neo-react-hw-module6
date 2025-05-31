@@ -1,0 +1,27 @@
+.menuItem {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 8px;
+  transition: color 250ms ease-in-out;
+}
+.menuItem:hover {
+  cursor: pointer;
+  color: var(--light-primary-color);
+}
+.hwTitle {
+  font-size: 10px;
+}
+.active::after {
+  content: '';
+  margin-right: -20px;
+  margin-left: 12px;
+  height: 32px;
+  width: 2px;
+  background-color: var(--light-color);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.inactive {
+  color: var(--light-tertiary-color);
+}

@@ -1,0 +1,8 @@
+.navList {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.active {
+  color: var(--accent-primary-color);
+}

@@ -1,0 +1,65 @@
+.headerTitleWrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+.headerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.headerTitleGradient {
+  display: block;
+  font-size: 1.1em;
+  font-weight: 900;
+  background-image: linear-gradient(
+    120deg,
+    var(--accent-primary-color) 5%,
+    var(--accent-tertiary-color) 70%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.headerText {
+  font-size: 0.6em;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.iconBurger {
+  color: var(--accent-tertiary-color);
+  transition: color 250ms ease-in-out;
+}
+.iconBurger:hover {
+  color: var(--accent-primary-color);
+  cursor: pointer;
+}
+.iconClose {
+  color: var(--light-color);
+  transition: color 250ms ease-in-out;
+}
+.iconClose:hover {
+  color: var(--accent-primary-color);
+  cursor: pointer;
+}
+.burgerMenuBtn {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  padding: 0;
+  margin-right: -4px;
+}
+@media (min-width: 768px) {
+  .burgerMenuBtn {
+    display: none;
+  }
+}
+.closeBtn {
+  position: fixed;
+  top: 12px;
+  left: 16px;
+}
+.mobileMenu {
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}

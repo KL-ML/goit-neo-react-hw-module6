@@ -1,0 +1,29 @@
+.notFoundContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: auto;
+  color: var(--light-secondary-color);
+}
+.notFoundImg {
+  object-fit: cover;
+  border-radius: 12px;
+}
+.headerNotFound {
+  font-size: 98px;
+  margin-top: 64px;
+}
+.textNotFound {
+  margin-bottom: -36px;
+  z-index: 100;
+}
+.goBack {
+  margin-top: 24px;
+  transition: color 250ms ease-in-out;
+  margin-bottom: 24px;
+}
+.goBack:hover {
+  color: var(--light-color);
+  text-decoration: underline;
+}

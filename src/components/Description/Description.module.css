@@ -1,0 +1,11 @@
+.description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--light-secondary-color);
+  margin-top: 8px;
+}
+@media (min-width: 768px) {
+  .description {
+    margin-top: 16px;
+  }
+}

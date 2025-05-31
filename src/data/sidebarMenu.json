@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Components and styling.",
+    "status": false,
+    "link": "https://goit-neo-react-hw-module1-ten-xi.vercel.app/"
+  },
+  {
+    "id": 2,
+    "title": "State and life cycle.",
+    "status": false,
+    "link": "https://goit-neo-react-hw-module2-azure.vercel.app/"
+  },
+  {
+    "id": 3,
+    "title": "Forms.",
+    "status": false,
+    "link": "https://goit-neo-react-hw-module3-mocha-one.vercel.app/"
+  },
+  {
+    "id": 4,
+    "title": "Hooks.",
+    "status": false,
+    "link": "https://goit-neo-react-hw-module4-psi-nine.vercel.app/"
+  },
+  {
+    "id": 5,
+    "title": "Routing.",
+    "status": true,
+    "link": "./"
+  },
+  {
+    "id": 6,
+    "title": "Redux basics.",
+    "status": false,
+    "link": "./"
+  },
+  {
+    "id": 7,
+    "title": "Asynch. Redux, memoization.",
+    "status": false,
+    "link": "./"
+  }
+]

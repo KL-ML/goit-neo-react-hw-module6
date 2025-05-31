@@ -1,0 +1,44 @@
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  padding: 0;
+  margin-right: -4px;
+}
+@media (min-width: 768px) {
+  .mobileDisplay {
+    display: none;
+  }
+}
+.green {
+  color: var(--success-color);
+  border-color: var(--success-color);
+  transition: opacity 250ms ease-in-out;
+}
+.green:hover {
+  color: var(--success-color);
+  border-color: var(--success-color);
+  opacity: 70%;
+  cursor: pointer;
+}
+.red {
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+  transition: opacity 250ms ease-in-out;
+}
+.red:hover {
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+  opacity: 70%;
+  cursor: pointer;
+}
+.search {
+  color: var(--light-tertiary-color);
+}
+.search:hover {
+  color: var(--accent-primary-color);
+  cursor: pointer;
+}
