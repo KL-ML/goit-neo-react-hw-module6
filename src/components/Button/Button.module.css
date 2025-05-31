@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
   height: 36px;
-  width: 96px;
   padding: 8px 12px;
   font-size: 14px;
   font-weight: 500;
@@ -36,7 +35,34 @@
   color: var(--accent-secondary-color);
   border-color: var(--accent-secondary-color);
 }
-.loadMoreBtn {
-  margin: 24px auto 0;
-  padding: 8px 24px;
+.tabletDisplay {
+  display: none;
+}
+@media (min-width: 768px) {
+  .tabletDisplay {
+    display: flex;
+  }
+}
+.green {
+  color: var(--success-color);
+  border-color: var(--success-color);
+  transition: opacity 250ms ease-in-out;
+}
+.green:hover {
+  color: var(--success-color);
+  border-color: var(--success-color);
+  opacity: 80%;
+}
+.red {
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+  transition: opacity 250ms ease-in-out;
+}
+.red:hover {
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+  opacity: 80%;
+}
+.addContact {
+  width: fit-content;
 }

@@ -26,13 +26,13 @@
   {
     "id": 5,
     "title": "Routing.",
-    "status": true,
-    "link": "./"
+    "status": false,
+    "link": "https://goit-neo-react-hw-module5-nu-ten.vercel.app/"
   },
   {
     "id": 6,
     "title": "Redux basics.",
-    "status": false,
+    "status": true,
     "link": "./"
   },
   {

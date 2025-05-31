@@ -6,17 +6,29 @@ import css from './Button.module.css';
 export default function Button({
   text,
   variant,
-  positionVariant,
+  tabletDisplay,
+  green,
+  red,
+  addContact,
+  // eslint-disable-next-line no-unused-vars
+  icon: Icon,
+  iconSize,
   btnType,
-  handleLoadMoreClick,
 }) {
   return (
     <>
       <button
         type={btnType}
-        onClick={handleLoadMoreClick}
-        className={clsx(css.button, css[variant], css[positionVariant])}
+        className={clsx(
+          css.button,
+          css[variant],
+          tabletDisplay && css.tabletDisplay,
+          green && css.green,
+          red && css.red,
+          addContact && css.addContact
+        )}
       >
+        <Icon size={iconSize} />
         {text}
       </button>
     </>
@@ -25,8 +37,6 @@ export default function Button({
 
 Button.PropTypes = {
   text: PropTypes.string.isRequired,
-  btnType: PropTypes.string,
-  handleLoadMoreClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
   variant: PropTypes.string,
-  positionVariant: PropTypes.string,
 };

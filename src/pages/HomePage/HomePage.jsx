@@ -1,40 +1,92 @@
-import { useEffect, useState } from 'react';
-import { getMovies } from '../../api/themoviedb-movies-api';
-import MovieList from '../../components/MovieList/MovieList';
-import Loader from '../../components/Loader/Loader';
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-import Heading from '../../components/Heading/Heading';
+import { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+
+import Description from '../../components/Description/Description';
+import ContactList from '../../components/ContactList/ContactList';
+import contacts from '../../data/contacts.json';
+
+import SearchBox from '../../components/SearchBox/SearchBox';
+import ContactForm from '../../components/ContactForm/ContactForm';
+import useLocalStorage from '../../hooks/useLocalStorage';
+import { nanoid } from 'nanoid';
+import Container from '../../components/Container/Container';
+
+const defaultContactsState = contacts;
 
 export default function HomePage() {
-  const [movies, setMovies] = useState([]);
+  const [contactsState, setContactsState] = useLocalStorage(
+    'contacts',
+    defaultContactsState
+  );
+  const [filter, setFilter] = useState('');
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  //filter contacts list for search
+  const filtersdContacts = contactsState.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
-  const trendingEndPoint = '/trending/movie/day';
+  //get and set values from SearchBox
+  function handleInput(value) {
+    setFilter(value);
+  }
 
-  useEffect(() => {
-    async function fetchMovies(params, endPoint) {
-      try {
-        setLoading(true);
-        setError(false);
-        const data = await getMovies(params, endPoint);
-        setMovies(data.results);
-      } catch (error) {
-        setError(true);
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
+  //add new contact to contacts list
+  function handleAddNewContact(data) {
+    if (findContact(data.name)) {
+      toast.error('Contact with the same name already exists.');
+      return;
     }
-    fetchMovies({}, trendingEndPoint);
-  }, []);
+    setContactsState([
+      ...contactsState,
+      { id: nanoid(), name: data.name, number: data.number },
+    ]);
+  }
+
+  //delete contact from comtact list
+  function handleDeleteContact(id) {
+    setContactsState(contactsState.filter(contact => contact.id != id));
+  }
+
+  //find contact in contact list by name
+  function findContact(name) {
+    return contactsState.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+  }
+  // const [movies, setMovies] = useState([]);
+
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(false);
+
+  // const trendingEndPoint = '/trending/movie/day';
+
   return (
     <>
-      <Heading variant="header1">Trending today</Heading>
-      {movies && movies.length > 1 && !error && <MovieList movies={movies} />}
-      {loading && <Loader loading={loading} />}
-      {error && <ErrorMessage />}
+      <Description
+        title="Phonebook"
+        description="Please add your contacts in the phonebook by filling the form below."
+      />
+      <ContactForm addContact={handleAddNewContact} />
+      {contactsState.length === 0 ? (
+        <p>There are no any contacts yet.</p>
+      ) : (
+        <Container variant="outerContainer">
+          <SearchBox onInput={handleInput} inputValue={filter} />
+          {filtersdContacts.length === 0 && contactsState.length !== 0 ? (
+            <p>There are no contacts with your search.</p>
+          ) : (
+            <ContactList
+              contacts={filtersdContacts}
+              onDelete={handleDeleteContact}
+            />
+          )}
+        </Container>
+      )}
+      <Toaster
+        toastOptions={{
+          removeDelay: 500,
+        }}
+      />
     </>
   );
 }

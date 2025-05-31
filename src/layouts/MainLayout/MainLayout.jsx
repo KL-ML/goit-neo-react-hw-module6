@@ -11,8 +11,8 @@ import menuItems from '../../data/sidebarMenu.json';
 import { Outlet } from 'react-router-dom';
 
 const homeWork = {
-  number: '5',
-  title: 'Routing.',
+  number: '6',
+  title: 'Redux basics.',
 };
 
 export default function MainLayout() {

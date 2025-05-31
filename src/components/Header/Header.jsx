@@ -10,16 +10,12 @@ export default function Header({
   onUpdate,
   moduleNumber,
   moduleTitle,
-  // onSearch,
-  // isDisabled,
 }) {
   return (
     <header className={css.header}>
       <div className={css.navGroup}>
         <Logo logoImgPath={logoImgPath} />
-        <Navigation />
       </div>
-
       <HeaderTitle
         moduleNumber={moduleNumber}
         moduleTitle={moduleTitle}

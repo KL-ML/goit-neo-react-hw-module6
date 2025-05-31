@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.lable {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--light-secondary-color);
+  padding-left: 4px;
+}
+.field {
+  width: 100%;
+  height: 36px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background-color: var(--dark-primary-color);
+  padding: 8px 12px;
+  color: var(--light-color);
+  margin-left: -4px;
+}
+.errorMessage {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  font-size: 10px;
+  font-weight: 100;
+  color: var(--danger-color);
+  opacity: 80%;
+  padding-left: 4px;
+}
+.errorLable {
+  color: var(--danger-color);
+  opacity: 80%;
+}
+.errorField {
+  border: 1px solid var(--danger-color);
+  opacity: 80%;
+}

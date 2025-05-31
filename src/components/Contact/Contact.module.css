@@ -1,0 +1,49 @@
+.contactWrap {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.avatar {
+  border-radius: 50%;
+  background-color: var(--light-color);
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.nameList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--light-secondary-color);
+}
+@media (min-width: 768px) {
+  .nameList {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.nameLine {
+  min-width: 117px;
+  width: 47vw;
+  max-width: 240px;
+}
+@media (min-width: 768px) {
+  .nameLine {
+    width: 117px;
+  }
+}
+@media (min-width: 920px) {
+  .nameLine {
+    width: 176px;
+  }
+}
+.numberLine {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.buttonsWrap {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+}
