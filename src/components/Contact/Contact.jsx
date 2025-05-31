@@ -60,5 +60,4 @@ Contact.PropTypes = {
   name: PropTypes.string,
   number: PropTypes.string,
   avatar: PropTypes.string,
-  onDelete: PropTypes.func,
 };
